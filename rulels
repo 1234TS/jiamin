@@ -18,7 +18,6 @@ ruleset=📽️ PrimeVideo,https://raw.githubusercontent.com/1234TS/jiamin/clash
 ruleset=🎶 TikTok,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/TikTok.list
 ruleset=🌍 Twitch,https://raw.githubusercontent.com/1234TS/jiamin/refs/heads/clash/twitch.list
 ruleset=🌍 HBO,https://raw.githubusercontent.com/1234TS/jiamin/refs/heads/clash/hbo.list
-ruleset=💬 Gork,https://raw.githubusercontent.com/1234TS/jiamin/refs/heads/clash/grok.list
 ruleset=🎥 Emby,https://raw.githubusercontent.com/1234TS/jiamin/refs/heads/clash/Emby.list
 ruleset=🌍 国外媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
 ruleset=🚀 节点选择,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
