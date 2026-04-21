@@ -67,6 +67,6 @@ custom_proxy_group=🏴‍☠️ Emby节点`select`(EMBY|Emby|emby)
 enable_rule_generator=true
 overwrite_original_rules=true
 
-;clash_rule_base=https://raw.githubusercontent.com/1234TS/jiamin/refs/heads/clash/GeneralClashConfig.yml
+
 
 ;luck
