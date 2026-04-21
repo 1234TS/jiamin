@@ -1,4 +1,4 @@
-# General Settings
+# 基础配置
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -8,7 +8,7 @@ external-controller: ':9090'
 unified-delay: true
 keep-alive-interval: 360
 
-# Sniffer configuration
+# 嗅探配置
 sniffer:
   enable: true
   sniff:
@@ -24,7 +24,7 @@ sniffer:
   force-dns-mapping: true
   override-destination: true
 
-# DNS Settings
+# DNS 配置
 dns:
   enable: true
   ipv6: true
@@ -117,15 +117,3 @@ dns:
     - 'www.bilibili.com'
     - 'api.bilibili.com'
     - 'a.w.bilicdn1.com'
-
-# --- BELOW HERE ARE THE SUBSCRIPTION INTEGRATION SECTIONS ---
-# For Stash, leave these empty or use the "Merge" feature to 
-# inject your subscription content here.
-
-proxy-groups:
-  # Define your strategy groups here (e.g., Select, URL-Test)
-  []
-
-rules:
-  # Define your routing rules here
-  []
