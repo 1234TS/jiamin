@@ -1,0 +1,17 @@
+#!name=滴滴去广告
+#!desc=从 adultramax 模块拆分的滴滴响应去广告规则
+#!author=整理自 yfamilys adultramax
+
+[Script]
+didi_xpget = type=http-response,pattern=^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_mget = type=http-response,pattern=^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_freight = type=http-response,pattern=^https?:\/\/freight\.xiaojukeji\.com\/gateway,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_daijia = type=http-response,pattern=^https?:\/\/daijia\.kuaidadi\.com(?::443)?\/gateway,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_feeds = type=http-response,pattern=^https?:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_fast = type=http-response,pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_dynamic = type=http-response,pattern=^https?:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_usercenter = type=http-response,pattern=^https?:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+didi_common = type=http-response,pattern=^https?:\/\/common\.diditaxi\.com\.cn\/common\/v5,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js,requires-body=true,max-size=-1,timeout=60
+
+[MITM]
+hostname = %APPEND% res.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cn, common.diditaxi.com.cn
