@@ -1,0 +1,32 @@
+#!name=微博去广告
+#!desc=从 adultramax 模块拆分的微博去广告规则
+#!author=整理自 yfamilys adultramax
+
+[URL Rewrite]
+(?i)^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload$ url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/cardlist\?(?:[^#?&]+&)*v_f=2 url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/ad\/ url reject-dict
+(?i)^https:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(?:[^#?&]+&)*a=get_searching_info url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily|push\/info) url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/photo\/info\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_positive|push_info) url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(?:discovery_home_bottom_getdotinfo|mobile_discovery_searchchange) url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category) url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_discover|finder_nav_polling)\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/!\/(?:search\/finder_nav_polling|sug\/list\/finderchange|was\/finder\/searchbarchange)\? url reject-dict
+(?i)^https:\/\/api\.weibo\.cn\/2\/video\/tiny_video_info_show\? url reject-dict
+(?i)^https:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime url reject-dict
+(?i)^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(?:get-lbs-cell-info\.php|sdkconfig\.php) url reject-dict
+(?i)^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead) url reject-dict
+(?i)^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead) url reject-dict
+
+[Script]
+weibo_coopen = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*get_coopen_ads,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/weibo_json.js,requires-body=true,max-size=-1,timeout=60
+weibo_topic = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/weibo_search_topic.json,requires-body=true,max-size=-1,timeout=60
+weibo_cardlist = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(?:\w{5}\/)?cardlist,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/weibo_json.js,requires-body=true,max-size=-1,timeout=60
